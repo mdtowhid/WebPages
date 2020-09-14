@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.9.0.min.js"></script>
+    <script src="jquery.event.move.js"></script>
+    <script src="jquery.twentytwenty.js"></script>
+    <link rel="stylesheet" href="twentytwenty.css">
+    <title>Image Comparison</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100%;
+            height: 100vh;
+        }
+        .box img{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+      
+        <img src="./img/img82.jpg" alt="" srcset="">
+        <img src="./img/img38.jpg" alt="" srcset="">
+    </div>
+
+    <script>
+        $(function(){
+            $('.box[data-orientation!="vertical"]').twentytwenty({
+                default_offset_pct: 0.5
+            });
+        });
+    </script>
+</body>
+</html>

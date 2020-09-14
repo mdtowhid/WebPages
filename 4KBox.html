@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>4K Image Box</title>
+	<style>
+		
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body{
+			background: #fbfbfb
+		}
+
+		.wrap {
+			margin-top: 230px;
+			perspective: 1000px;
+			perspective-origin: 50% 50%;
+
+		}
+		.cube {
+			margin: auto;
+			position: relative;
+			height: 200px;
+			width: 200px;
+			transform-style: preserve-3d;
+		}
+
+		.cube > div {
+			position: absolute;
+			box-sizing: border-box;
+			padding: 10px;
+			height: 100%;
+			width: 100%;
+			opacity: 0.8;
+			box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+			cursor: pointer;
+		}
+		.cube:hover > div{
+			opacity: 1;
+		}
+
+		.front {
+			background: url('./img/london.jpg');
+			background-size: cover;
+			background-position: center;
+			transform: translateZ(100px);
+		}
+
+		.back {
+			background: url('./img/streetart2.jpg');
+			background-size: cover;
+			background-position: center;
+			transform: translateZ(-100px) rotateY(180deg);
+		}
+
+		.right {
+			background: url('./img/img_band_ny.jpg');
+			background-size: cover;
+			background-position: center;
+			transform: rotateY(-270deg) translateX(100px);
+			transform-origin: top right;
+		}
+
+		.left {
+			background: url('./img/t1.jpg');
+			background-size: cover;
+			background-position: center;
+			transform: rotateY(270deg) translateX(-100px);
+			transform-origin: center left;
+		}
+
+		.top {
+			background: url('./img/luis-quintero-1671992-unsplash.jpg');
+			background-size: cover;
+			background-position: center;
+			transform: rotateX(-270deg) translateY(-100px);
+			transform-origin: top center;
+		}
+
+		.bottom {
+			background: url('./img/streetart5.jpg');
+			background-size: cover;
+			background-position: center;
+			transform: rotateX(270deg) translateY(100px);
+			transform-origin: bottom center;
+		}
+
+		@keyframes rotate {
+			from {
+				transform: rotateX(0deg) rotateY(0deg);
+			}
+
+			to {
+				transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+
+		.cube {
+			animation: rotate 20s infinite linear;
+		}
+
+		.wrap:hover .front {
+			transform: translateZ(200px);
+		}
+
+		.wrap:hover .back {
+			transform: translateZ(-200px) rotateY(180deg);
+		}
+
+		.wrap:hover .right {
+			transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+		}
+
+		.wrap:hover .left {
+			transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+		}
+
+		.wrap:hover .top {
+			transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
+		}
+
+		.wrap:hover .bottom {
+			transform: rotateX(270deg) translateZ(100px) translateY(100px);
+		}
+
+		.cube > div {
+            transition: 1.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="cube">
+			<div class="front">
+	
+			</div>
+			<div class="back">
+
+			</div>
+			<div class="top">
+			</div>
+			<div class="bottom">
+		
+			</div>
+			<div class="left">
+
+			</div>
+			<div class="right">
+	
+			</div>
+		</div>
+	</div>
+</body>
+</html>

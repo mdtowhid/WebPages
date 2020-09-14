@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Styles.css">
+    <script src="jquery-1.9.0.min.js"></script>
+    <title>Black And White Hover Effect</title>
+</head>
+<body class="blackWhiteEffectBody">
+    <section class="blackWhiteEffect">
+        <div class="pointer"></div>
+        <h1>Tommas & <br>Jerry</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Velit cum excepturi architecto odit, laudantium itaque maxime, 
+                incidunt eveniet nisi aliquam a iusto voluptatibus 
+                assumenda voluptatem voluptas, repellat pariatur numquam iste?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Velit cum excepturi architecto odit, laudantium itaque maxime, 
+                incidunt eveniet nisi aliquam a iusto voluptatibus 
+                assumenda voluptatem voluptas, repellat pariatur numquam iste?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Velit cum excepturi architecto odit, laudantium itaque maxime, 
+                incidunt eveniet nisi aliquam a iusto voluptatibus 
+                assumenda voluptatem voluptas, repellat pariatur numquam iste?Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Velit cum excepturi architecto odit, laudantium itaque maxime, 
+                incidunt eveniet nisi aliquam a iusto voluptatibus 
+                assumenda voluptatem voluptas, repellat pariatur numquam iste?</p>
+    </section>
+    <script>
+        $(document).mousemove(function(e){
+            $('.pointer').css({
+                left: e.pageX,
+                top: e.pageY
+            })
+        })
+    </script>
+</body>
+</html>

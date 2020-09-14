@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.9.0.min.js"></script>
+    <style>
+        .wrap {
+            position: relative;
+        }
+
+        #uploadImg {
+            color: transparent;
+            width: 100px;
+            overflow: hidden;
+            height: 25px;
+        }
+
+        #uploadImg::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        #uploadImg::before {
+            content: 'Select Image';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+            opacity: 1;
+            color: black;
+        }
+
+        .resize_div {
+            overflow: auto;
+            resize: both;
+            visibility: hidden;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5%;
+
+        }
+
+        .resize_div img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .resize_div::-webkit-scrollbar {
+            width: 10px;
+            background: transparent;
+        }
+
+        .resize_div::-webkit-slider-thumb {}
+
+        .modal {
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <input type="file" name="file" id="uploadImg" />
+    </div>
+
+    <div class="modal">
+        <div class="resize_div">
+            <img class="targetImg">
+            <button>Resize</button>
+        </div>
+    </div>
+
+    <h3 class="output"></h3>
+    <h3 class="output1"></h3>
+    <script>
+        $(document).ready(function () {
+            function readUrl(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('.targetImg').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $('#uploadImg').change(function () {
+                readUrl(this);
+                $('.modal').css('display', 'block');
+
+                $('.resize_div').css({
+                    'width': 450 + 'px',
+                    'height': 320 + 'px',
+                    'visibility': 'visible'
+                });
+            });
+
+
+            $('.resize_div').mouseup(function (e) {
+                calcImg();
+            });
+            function calcImg() {
+                var x = $('.resize_div img');
+                var w = $(this).width();
+                var h = $(this).height();
+                $('.output').html("DIV: Width: " + w + " Height: " + h);
+                x.css({
+                    'width': w,
+                    'height': h
+                });
+                var imgWidth = x.width();
+                var imgHeight = x.height();
+                $('.output1').html("IMG: Width: " + imgWidth + " Height: " + imgHeight);
+            }
+        });
+    </script>
+</body>
+
+</html>

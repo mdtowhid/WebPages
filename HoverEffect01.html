@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello</title>
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.container{
+			width: 100%;
+			height: 100vh;
+			background: #fbfbfb;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(to right,#303D46,#1DBFAF);
+		}
+		.card{
+			width: 215px;
+			height: 215px;
+			background: url('./img/WebSchools BD 2.jpg');
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+			transition: .5s linear;
+			z-index: 1;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			cursor: pointer;
+			box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+		.card span{
+			width: 100%;
+			height: 100%;
+			background: #ccc;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			z-index: 12;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+
+		.card span:before, span:after{
+			box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+		.card span:nth-child(1){
+			background: url('./img/img38.jpg');
+			background-size: cover;
+			background-position: center center;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			z-index: 1;
+		}
+		.card:hover span:nth-child(1){
+			top: -100%;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: .5s;
+		}
+
+		.card span:nth-child(4){
+			background: url('./img/img8.jpg');
+			background-size: cover;
+			background-position: center center;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			z-index: 1;
+		}
+		.card:hover span:nth-child(4){
+			top: 100%;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: 2.5s;
+		}
+
+		.card span:nth-child(2){
+			background: url('./img/parallax3.jpg');
+			background-size: cover;
+			background-position: center center;
+			transition-delay: 3s;
+			z-index: 1;
+			left: 0%;
+		}
+
+		.card:hover span:nth-child(2){
+			left: -100%;
+		}
+
+		.card span:nth-child(2):before{
+			content: '';
+			position: absolute;
+			top: 0%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('./img/amazing.jpg');
+			background-size: cover;
+			background-position: center center;
+			z-index: 1;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: 4s;
+		}
+
+		.card span:nth-child(2):after{
+			content: '';
+			position: absolute;
+			top: 0%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('./img/fleur-1660323-unsplash.jpg');
+			background-size: cover;
+			background-position: center center;
+			z-index: 1;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: 4.4s;
+		}
+
+		.card:hover span:before{
+			top: -100%;
+		}
+
+		.card:hover span:after{
+			top: 100%;
+		}
+
+
+
+		.card span:nth-child(3){
+			background: url('./img/chris-lawton-172561-unsplash.jpg');
+			background-size: cover;
+			background-position: center center;			
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: 1s;
+			z-index: 1;
+			left: 0%;
+		}
+
+		.card:hover span:nth-child(3){
+			left: 100%;
+		}
+
+		.card span:nth-child(3):before{
+			content: '';
+			position: absolute;
+			top: 0%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('./img/andrey-konstantinov-683952-unsplash.jpg');
+			background-size: cover;
+			background-position: center center;
+			z-index: 1;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: 1.5s;
+		}
+
+		.card span:nth-child(3):after{
+			content: '';
+			position: absolute;
+			top: 0%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('./img/dan-rogers-1560459-unsplash.jpg');
+			background-size: cover;
+			background-position: center center;
+			z-index: 1;
+			transition: 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+			transition-delay: 2s;
+		}
+
+		.card:hover span:before{
+			top: -100%;
+		}
+
+		.card:hover span:after{
+			top: 100%;
+		}
+
+		.author{
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			padding: 10px 15px;
+			line-height: 25px;
+			border: 5px solid white;
+			text-align: center;
+			font-family: consolas;
+			color: white;
+			box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="author">
+				<p><b>Made by:</b> WebSchools</p>
+			</div>
+		<div class="card">
+			
+			<span></span>
+
+			<span></span>
+			<span></span>
+
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

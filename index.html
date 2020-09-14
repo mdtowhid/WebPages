@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: consolas;
+			box-sizing: border-box;
+		}
+		.container{
+			width: 100%;
+			height: 100vh;
+			background:#fcfcfc;
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			background: linear-gradient(to right,#303D46,#1EAEDB)
+		}
+		.container .div1{
+			width: 350px;
+			height: 460px;
+			overflow: hidden;
+		}
+		.div1 .cardTop{
+			width: 100%;
+			height: 230px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			transform: translateY(100px);
+			transition: .5s linear;
+			background: linear-gradient(to right,#1DBFAF,#1EAEDB);
+			color: white;
+		}
+		.div1 .cardTop img{
+			width: 100%;
+		}
+		.div1:hover .cardTop{
+			transform: translateY(0);
+		}
+		.details{
+			width: 100%;
+			height: 235px;
+			overflow: hidden;
+			padding: 20px 15px;
+			transform: translateY(-132px);
+			transition: .5s linear;
+			background: #1889a5;
+			text-align: justify;
+			color: white;
+		}
+		.div1:hover .details{
+			transform: translateY(0);
+		}
+		.details p{
+			padding-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="div1">
+			<div class="cardTop">
+				<img src="avatar_hat.jpg">
+			</div>
+			<div class="details">
+				<h2>Jane Doe</h2>
+				<h3>Web Developer</h3>
+				<p>I am i. Hello How arye you. 
+					Today is Bangladesh. 
+					Bangladesh is today.I am i. Hello How arye you. 
+					Today is Bangladesh. 
+					Bangladesh is today.I am i. Hello How arye you. 
+					Today is Bangladesh. 
+					Bangladesh is today.I am i. Hello How arye you. 
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

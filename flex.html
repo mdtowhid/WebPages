@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box_items {
+            background-color: DodgerBlue;
+            width: 12%;
+            height: 200px;
+            margin: .5%;
+            padding: 20px;
+        }
+
+        .box {
+            width: 100%;
+            height: auto;
+            background: #fbfbfb;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+        }
+        @media only screen and (max-width: 800px){
+            .box {
+                flex-flow: column;
+            }
+            .box_items{
+                width: 90%;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+            <div class="box_items"></div>
+    </div>
+</body>
+
+</html>

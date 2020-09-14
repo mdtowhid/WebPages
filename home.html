@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.9.0.min.js"></script>
+    <title>Home</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul, a{
+            list-style-type: none;
+            text-decoration: none;
+        }
+        .containerWrapper{
+            width: 100%;
+            height: 100vh;
+            background: white;
+            position: relative;
+        }
+        .fix{
+            overflow: hidden;
+            position: relative;
+        }
+        .container{
+            width: 1200px;
+            height: 100%;
+            position: relative;
+        }
+        .menu{
+            position: relative;
+            height: 46px;
+            background: -webkit-linear-gradient(left, #6a9113, #141517);
+        }
+        .menu ul{
+            list-style-type: none;
+        }
+        .menu ul li{
+            float: left;
+            position: relative;
+        }
+        .menu ul li a{
+            display: block;
+            overflow: hidden;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 14pt;
+            font-family: cursive;
+        }
+        .menu ul li a:hover{
+            background: #141517;
+        }
+        .dropDown{
+            position: fixed;
+            left: 0;
+            top: 46px;
+            width: 100%;
+            height: 100vh;
+            background: rgba(255,255,255,0.5);
+            transition: 2s cubic-bezier(0.215, 0.610, 0.355, 1);
+            padding: 20px;
+        }
+        .dropDown.active{
+            display: block;
+            opacity: 1;
+        }
+        .dropDownMenus{
+            width: 20%;
+            float: left;
+            padding: 20px;
+            margin-right: 15px;
+            background: rgba(255,255,255,0.5);
+        }
+        .dropDownMenus li{
+            position: relative;
+            padding: 5px 8px;
+            position: relative;
+            color: black;
+            font-family: cursive;
+            font-size: 12pt;
+            cursor: pointer;
+            z-index: 2;
+            transition: .3s linear;
+        }
+        .dropDownMenus li:hover{
+            color: white;
+        }
+        .dropDownMenus li::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 0%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: -1;
+            transition: 1.5s all ease-in-out;
+        }
+        .dropDownMenus li::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0%;
+            width: 0%;
+            height: 100%;
+            background: rgba(0, 0, 0, 1);
+            z-index: -1;
+            transition: .5s all ease-in-out;
+            transition-delay: .1s;
+        }
+        .dropDownMenus li:hover::before, .dropDownMenus li:hover::after{
+            width: 100%;
+            color: white;
+        }
+        #iframeId{
+            width: 70%;
+            height: 85vh;
+            border-radius: 5px;
+            padding: 2px;
+            background: rgba(255,255,255,0.5);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="containerWrapper fix">
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="more"><a href="#">More</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="dropDown">
+            <ul class="dropDownMenus">
+                <li value="WebDesignerDay31052019/allVideos.html">Home</li>
+                <li value="splitHover.html">Split Hover</li>
+                <li value="clipPath.html">Clip Path</li>
+                <li value="3dflipCardHoverEffect.html">Flip Card Hover Effect</li>
+                <li value="3dflipCart.html">3D Flip Card</li>
+                <li value="blackAndWhiteHover.html">Black & White Hover</li>
+                <li value="quickFun.html">Fun</li>
+                <li value="randomAnimation01.html">Random Animation</li>
+                <li value="shuffleText.html">Shuffle Text</li>
+                <li value="background.html">Parralex Scrolling 1</li>
+                <li value="img.html">Images Resizer</li>
+                <li value="scroll.html">Scrolling Animation</li>
+            </ul>
+            <iframe src="WebDesignerDay31052019/allVideos.html" frameborder="0" id=iframeId></iframe>
+        </div>
+
+    </div>
+
+<!--
+    <div class="containerWrapper fix">
+        <div class="container fix">
+
+        </div>
+    </div>
+-->
+
+<script>
+    $(document).ready(function(){
+        $('.more').click(function(){
+            $('.dropDown').toggleClass("active");
+        });
+
+        $('.dropDownMenus li').click(function(){
+            var href=$(this).attr('value');
+            $('#iframeId').attr('src', href);
+        });
+    });
+
+</script>
+</body>
+</html>

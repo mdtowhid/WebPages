@@ -1,0 +1,396 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.split{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    background: #000;
+}
+.split .screen{
+    position: relative;
+    flex-grow: 2;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: .7s;
+}
+.split:hover .screen{
+    opacity: 0.3;
+}
+.split .screen:hover{
+    flex-grow: 3;
+    opacity: 1;
+}
+.split .screen:nth-child(1){
+    background-image: url("./img/img35.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.split .screen:nth-child(2){
+    background-image: url("./img/img37.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.split .screen:nth-child(3){
+    background-image: url("./img/img36.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.split .screen .content{
+    position: absolute;
+    width: 400px;
+    height: auto;
+    bottom: 0%;
+    right: 0;
+    background: white;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: .5s;
+    text-align: justify;
+}
+.split .screen:hover .content{
+    transform: translateX(0);
+    transition-delay: 1s;
+}
+.split .screen:hover .content h2{
+    color: red;
+    font-size: 30px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    text-transform: capitalize
+}
+
+
+/*CLIP PATH HOVER EFFECT*/
+
+.circle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.circle:hover{
+    z-index: 1;
+}
+
+.circle:nth-child(1){
+    background: url('./img/img38.jpg');
+    background-attachment: fixed;
+    clip-path: circle(100px at 0 0);
+    background-size: cover;
+}
+.circle:nth-child(1):hover{
+    clip-path: circle(1200px at 0 0);
+}
+
+.circle:nth-child(2){
+    background: url('./img/img15.jpg');
+    background-attachment: fixed;
+    clip-path: circle(100px at 100% 0);
+    background-size: cover;
+}
+.circle:nth-child(2):hover{
+    clip-path: circle(1200px at 100% 0);
+}
+
+.circle:nth-child(3){
+    background: url('./img/img6.jpg');
+    background-attachment: fixed;
+    clip-path: circle(100px at 0 100%);
+    background-size: cover;
+}
+.circle:nth-child(3):hover{
+    clip-path: circle(1200px at 0 100%);
+}
+
+.circle:nth-child(4){
+    background: url('./img/img8.jpg');
+    background-attachment: fixed;
+    clip-path: circle(100px at 100% 100%);
+    background-size: cover;
+}
+.circle:nth-child(4):hover{
+    clip-path: circle(1200px at 100% 100%);
+}
+
+/*Black And White Hover Effect*/
+.blackWhiteEffectBody{
+    min-height: 100vh;
+}
+.blackWhiteEffect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+.blackWhiteEffect h1{
+    text-transform: uppercase;
+    font-size: 8em;
+    line-height: 1.2em;
+    padding: 50px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.blackWhiteEffect p{
+    height: 100%;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 18px;
+}
+
+.pointer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white;
+    pointer-events: none;
+    mix-blend-mode: difference;
+}
+
+/*3D Flip Cart Hover Effect*/
+.flipCartBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+#card{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+}
+#card .front,
+#card .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+#card .front{
+    background: url('./img/img32.jpeg');
+    background-size: cover;
+}
+#card .back{
+    background: url('./img/img34.jpeg');
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+/* 3D flip Card Hover Effect */
+
+.container{
+    max-width: 1200px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    position: relative;
+    margin: 20px 0;
+    width: 300px;
+    height: 400px;
+    background: #fff;
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0,0,0,0.5);
+
+}
+.card:hover{
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+.card .imgBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+}
+.card .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.card:hover .imgBox{
+    transform: rotateY(-135deg);
+}
+.card .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 100px 39px
+}
+
+/* Quick Fun  */
+.quickFunBody{
+    width: 100%;
+    height: 100vh;
+    background: url('./img/img16.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.spanElement{
+    display: inline-block;
+    width: 8%;
+    height: 40px;
+    margin: 2px 2px 2px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.spanElement.fall{
+    position: relative;
+    animation: animate 20s forwards;
+}
+
+
+.spanElement.fall:nth-child(1n+1){
+    background: #DC4F42;
+}
+.spanElement.fall:nth-child(3n+1){
+    background: #DA98FC;
+}
+.spanElement.fall:nth-child(5n+1){
+    background: #107C10;
+}
+.spanElement.fall:nth-child(7n+1){
+    background: #881798;
+}
+.spanElement.fall:nth-child(9n+1){
+    background: #DD4B78;
+}
+.spanElement.fall:nth-child(11n+1){
+    background: rgb(195, 0, 146);
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0) rotate(0deg);
+    }
+    100%{
+        transform: translateY(1290px) rotate(10deg);
+    }
+}
+
+.randomAnimationBody1{
+    width: 100%;
+    height: 100vh;
+
+}
+.canter{
+    width: 1200px;
+    height: 380px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    background: url('./img/img67.png');
+    background-position: top;
+    background-size: cover;
+    transition: 10s linear;
+    animation-delay: .3s;
+}
+
+.canter:hover{
+    background-position: bottom;
+}
+
+/*
+Text Shuffling
+*/
+.textShufflingBody{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textShuffling{
+    font-family: consolas;
+    position: relative;
+    height: 50px;
+    background: #ccc;
+    overflow: hidden;
+    text-align: center;
+}
+.textShuffling span{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.textShuffling:hover span{
+    animation: shuffle steps(10) 3s infinite;
+}
+@keyframes shuffle{
+    0%{
+        transform: translateY(0);
+    }100%{
+        transform: translateY(-500px)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
